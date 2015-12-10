@@ -30,7 +30,8 @@ void TIMER_INT()
 
   //OCR1A = 125;  // 16Khz
   //OCR1A = 100;  // 20Khz
-  OCR1A = 80;   // 25Khz
+  //OCR1A = 80;   // 25Khz
+  OCR1A = 160;   // 12.5Khz
   TCNT1 = 0;
   delay(200);
   TIMSK1 |= (1 << OCIE1A); // Enable Timer1 interrupt
