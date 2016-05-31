@@ -1,11 +1,12 @@
 #include <JJ_MPU6050_DMP_6Axis.h>  // 与DMP工作库的修改版本（见注释内）typedef enum 
+
 #define I2C_SPEED 400000L //I2C速度
 
 MPU6050 mpu;
 boolean dmpReady = false;
 uint16_t packetSize;
 
-bool dmpSetup(){
+bool dmpSetup(){    
     Wire.begin();
     TWSR = 0;
     TWBR = ((16000000L / I2C_SPEED) - 16) / 2;
